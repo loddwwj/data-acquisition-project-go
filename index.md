@@ -52,3 +52,66 @@ Communicates a 40-bit data transfer from the DATA channel containing:
     8-bit parity check data
 
 ![avatar](https://github.com/loddwwj/loddwwj.github.io/blob/main/sensor%20DHT11.png)
+
+### 2.3 Coding Progress
+
+Our code is listed below:
+
+    import time
+    import sys
+    import dht11
+    import RPi.GPIO as GPIO
+
+    # setup sensor location
+    Temp_sensor = 14
+    red_led = 18
+
+    # set the red led as a GPIO out
+    GPIO.setup(red_led, GPIO.OUT)
+
+    def main():
+        # Disable warnings and set the mode to BCM
+        GPIO.setwarnings(False)
+        GPIO.setmode(GPIO.BCM) 
+
+    # set dht11 and define ideal temperature and humidity
+    instance = dht11.DHT11(pin = Temp_sensor)
+    ideal_humidity = (40, 50)
+    ideal_temperature = (18, 24)
+
+    while True:
+        # get DHT11 sensor value
+        result = instance.read()
+
+        # check current humidity and temperature levels and flash lights accordingly. We will need to find a way to toggle the humidifire and thermostat instead
+        if (result.humidity > ideal_humidity[0] and result.humidity < ideal_humidity[1]) and (result.temperature > ideal_temperature[0] and result.temperature < ideal_temperature[1]):
+            print("Everything is ok")
+            GPIO.output(red_led, GPIO.LOW)
+        elif (result.humidity < ideal_humidity[0] or result.humidity > ideal_humidity[1]) and (result.temperature < ideal_temperature[0] or result.temperature > ideal_temperature[1]):
+            print("Both humidity and temperature are wrong")
+            GPIO.output(red_led, GPIO.HIGH)
+            time.sleep(10)
+        elif (result.humidity > ideal_humidity[0] and result.humidity < ideal_humidity[1]):
+            GPIO.output(red_led, GPIO.HIGH)
+            time.sleep(5)
+            GPIO.output(red_led, GPIO.LOW)
+            time.sleep(5)
+            print("Temperature is wrong")
+        else:
+            GPIO.output(red_led, GPIO.HIGH)
+            time.sleep(2.5)
+            GPIO.output(red_led, GPIO.LOW)
+            time.sleep(2.5)
+            GPIO.output(red_led, GPIO.HIGH)
+            time.sleep(2.5)
+            GPIO.output(red_led, GPIO.LOW)
+            time.sleep(2.5)
+            print("Humidity is wrong")
+        
+        print("Temperature = ",result.temperature,"C"," Humidity = ",result.humidity,"%")
+    if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        GPIO.cleanup()
+        sys.exit(0)
