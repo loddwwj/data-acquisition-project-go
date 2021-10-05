@@ -28,16 +28,27 @@ In addition, if the air temperature is too high, but the humidity is too low, it
 
 ### 2.2 Sensors Used
 * DHT11
+
 Humidity measurement range: 20 - 90%RH
+
 Humidity measurement accuracy: ±5%RH
+
 Temperature measurement range: 0 - 50℃
+
 Temperature measurement accuracy: ±2℃
+
 Power supply: DC 3.5~5.5V; PCB size: 2.0 x 2.0 cm
+
 Communicates a 40-bit data transfer from the DATA channel containing:
-8-bit humidity integer data
-8-bit humidity decimal data
-8-bit temperature integer data
-8-bit temperature decimal data
-8-bit parity check data
+
+    8-bit humidity integer data
+
+    8-bit humidity decimal data
+
+    8-bit temperature integer data
+
+    8-bit temperature decimal data
+
+    8-bit parity check data
 
 ![avatar](https://github.com/loddwwj/loddwwj.github.io/blob/main/sensor%20DHT11.png)
