@@ -53,6 +53,8 @@ Communicates a 40-bit data transfer from the DATA channel containing:
 
 ![](sensor%20DHT11.png)
 
+ <center>Figure1.picture of DHT11</center>
+
 ### 2.3 Coding Progress
 
 Our code is listed below:
