@@ -51,7 +51,7 @@ Communicates a 40-bit data transfer from the DATA channel containing:
 
     8-bit parity check data
 
-![avatar](https://github.com/loddwwj/loddwwj.github.io/blob/main/sensor%20DHT11.png)
+![](sensor%20DHT11.png)
 
 ### 2.3 Coding Progress
 
