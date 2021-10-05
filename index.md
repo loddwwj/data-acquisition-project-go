@@ -39,4 +39,4 @@ Communicates a 40-bit data transfer from the DATA channel containing:
 8-bit temperature integer data
 8-bit temperature decimal data
 8-bit parity check data
-![avatar](C:\Users\LiSiWen\Desktop\github\sensor DHT11.png)
+![avatar](https://github.com/loddwwj/loddwwj.github.io/blob/main/sensor%20DHT11.png)
