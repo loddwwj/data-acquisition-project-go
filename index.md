@@ -84,7 +84,9 @@ Relative humidity, Rh or ϕ is the ratio of partial pressure of water vapor in t
 
 Specific Humidity (humidity ratio) is the ratio of the mass of water vapor to total mass of the air parcel. Approximate formula should be $\frac {m_{H_{2O}}}{m_{air}-m_{H_{2O}}(dry air)}$ , with unit kg/kg or g/kg. In our project we need also consider the transform formula for Specific Humidity and Relative humidity. It should be 
 
+
 $$RH=100*\frac {ω}{ω_s} =0.263pq(exp⁡\frac {17.67(T-T_0)}{T-29.65})^{-1}$$
+
 
 $$ω_s=\frac {m_{vs}}{m_d} =\frac {0.622e_s}{p}(approximation)$$, es means saturation vapor pressure(pa), it can be get from vapor pressure of water table.
 
