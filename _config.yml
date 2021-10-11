@@ -21,3 +21,6 @@ owner:
     analytics:
     verify:
     scholar: #id
+  markdown: kramdown
+  kramdown:
+      math_engine: katex
