@@ -72,10 +72,10 @@ The definition of humidity contains several aspects: **Absolute humidity, Relati
 
 Relative humidity, Rh or ϕ is the ratio of partial pressure of water vapor in the mixture to the equilibrium vapor pressure of water over a flat surface of pure water at a given temperature.  $ϕ=p_(H_2O)/p*(H_2O)$ (Partial pressure means the percentage of water pressure divided by total pressure.) Once the ϕ increase, air should be wetter and if it reaches to 100%, it will reach to dew point(participation). Relative humidity will be affected by temperature. **The colder air will get lower capacity to maintain vapors**。 
 
-Specific Humidity (humidity ratio) is the ratio of the mass of water vapor to total mass of the air parcel. Approximate formula should be $\frac {m_(H_2O)}/{m_air-m_(H_2O）(dry air)} $, with unit kg/kg or g/kg. In our project we need also consider the transform formula for Specific Humidity and Relative humidity. It should be 
+Specific Humidity (humidity ratio) is the ratio of the mass of water vapor to total mass of the air parcel. Approximate formula should be $\frac {m_(H_2O)}{m_air-m_(H_2O)}(dry air)} $, with unit kg/kg or g/kg. In our project we need also consider the transform formula for Specific Humidity and Relative humidity. It should be 
 
-$$RH=100*\frac {ω}/{ω_s} =0.263pq(exp⁡\frac {17.67(T-T_0)}/{T-29.65})^(-1)$$
-$$ω_s=\frac {m_(vs)}/{m_d} ={0.622e_s}/p(approximation)$$, es means saturation vapor pressure(pa), it can be get from vapor pressure of water table [2].
+$$RH=100*\frac {ω}{ω_s} =0.263pq(exp⁡\frac {17.67(T-T_0)}{T-29.65})^(-1)$$
+$$ω_s=\frac {m_(vs)}{m_d} =\frac {0.622e_s}{p}(approximation)$$, es means saturation vapor pressure(pa), it can be get from vapor pressure of water table [2].
 
 ω means humidity ratio at certain cases,and ω_s  means saturation equilibrium humidiy ratio.
 
