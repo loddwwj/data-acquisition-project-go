@@ -64,7 +64,7 @@ Communicates a 40-bit data transfer from the DATA channel containing:
 
 ![](sensor%20DHT11.png)
 
- <center>Figure1.picture of DHT11</center>
+ <center>Figure.picture of DHT11</center>
 
 ### 2.3 Relative humidity-Humidity ratio
 
@@ -97,17 +97,35 @@ In our project, the table here can be utilized to estimate an exact value (the r
 
 **Table 1 presents the values from the Canadian Standards Association (CSA) International's Standard** CAN/CSA Z412-00 - "Office Ergonomics" which gives temperature and relative humidity requirements for offices in Canada. These values are based on the American Society of Heating, Refrigerating, and Air Conditioning Engineers (ASHRAE) Standard 55 - 2004 "Thermal Environmental Conditions for Human Occupancy". These values are designed to meet the needs of 80% of individuals which means a few people will feel uncomfortable even if these values are met. Additional measures may be required. ASHRAE Standard 55 recommends a range of temperature and humidity values for thermal comfort in office work. 
 
-![]
+![](picture/metho table1.png)
+
+Figure. Table of Temperature and Humidity
+ 
+![](picture/metho pic2.png)
+ 
+Figure. ASHRAE application in computer
 
 **The reason we use ASHRAE Standard 55 in 2020 is that there is a good website that can manipulate inputs and outputs. (Temperature, relative humidity, humidity ratio and thermal comfortable range.)**
 
 ### 2.6 Psychrometric chart (temperature vs. relative humidity)
+
+![](picture/metho pic3.png)
+
+Figure. Psychrometric Chart
 
 As you can see, this chart comes from Thompson, and it is used in recent engineering program to estimate facts. **The X-axis means dry bulb temperature, Y-axis means humidity ratio, and relative humidity in parabola.** 
 
 In next part, the thermal comfort tool is based on this chart to generate exact figure for our project.
 
 ### 2.7 Center for the built environmental Thermal Comfort Tool
+
+![](picture/metho pic4.png)
+
+Figure. Out of range in chart
+
+![](picture/metho pic5.png)
+
+Figure. In the range in chart
 
 The website tool contains inputs and outputs. **In our projects, the main two parts is temperature and relative humidity**. The other inputs, as **assumptions**, including **Air speed, metabolic rate, and clothing level, is related to ASHRAE Standard 55-2020 to get the range**. We use the formula to check with the humidity ratio that comes from relative humidity (which is closed to the chart in tool).
 
@@ -116,6 +134,23 @@ We get sensor value for temperature 24C and relative humidity for 46% and it’s
 In this case, the humidifier should be on working. However, according to humidifier’s shortcomings in accuracy and unity (can’t reach temperature value.), our humidifier didn’t release the vapor. 
 
 ### 2.8 Humidifier
+
+![](picture/humidifier1.png)
+
+Figure. The structure of humidifier & relationship between chart
+
+![](picture/humidifier 2.png)
+
+Figure. Total view of humidifier
+
+![](picture/humidifier 3.png)
+
+Figure. Not vaporizing humidifier
+
+![](picture/humidifier 4.png)
+
+Figure. Vaporizing humidifier
+
 *summary of humidifier*
 The humidifier limits are based on several aspects:
 1.	**Inaccuracy** 
