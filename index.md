@@ -90,15 +90,21 @@ In order to sense the temperature in the surrounding environment, DHT11 has an N
 
 ![](picture/dht11 2.png)
 
+Figure. DHT11 Temperature Measurement
+
 **2) DHT11 Humidity Sensing**
 
 For Humidity Measurement, it uses a capacitive humidity sensor, which has two electrodes and a substrate material in between. The substrate material is used for holding the moisture on its surface. As moisture content changes in our environment, they are get saturated on the substrate material, which in turn changes the resistance between electrodes. This change in electrode resistivity is then calibrated using the humidity coefficient(saved in OTP memory) and the final relative humidity value is released. Here’s the image showing the internal structure of DHT11 humidity sensor:
 
 ![](picture/dht11 3.png)
 
+Figure. DHT11 Humidity Measurement Part
+
 Next part, we will talk about DHT11 communication with microcontroller to explain its working principles. The circuit diagram to interface DHT11 with microcontroller is shown in the below figure:
 
 ![](picture/dht11 4.png)
+
+Figure. Circuit Diagram of DHT11
 
 Pull-up resistance of 5k ohm is recommended to place at the Data Pin of DHT11 sensor. At normal conditions, the data pin of DHT11 remains at the HIGH voltage level and the sensor remains in low power consumption mode. In order to receive data from the DHT11 sensor, the microcontroller should make the Data Pin low for at least 18us, so that the sensor could sense it. Once the DHT11 sensor senses the low signal at the Data Pin, it changes its state from low power consumption mode to running mode and waits for the Data Pin to get HIGH. As the Data Pin gets HIGH again by the microcontroller, DHT11 sends out the 40-Bit calibrated output value serially. After sending the data, DHT11 goes back to low power consumption mode and waits for the next command from the microcontroller. The microcontroller has to wait for 20-40us for getting a response from the DHT11 sensor.
 
