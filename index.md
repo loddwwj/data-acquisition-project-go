@@ -128,3 +128,16 @@ The humidifier’s sensor can only get the value in relative humidity not temper
 Our code is listed below:
 
 
+## 3. Discussion
+
+
+In this project, we presented a practical problem of how to provide more friendly control of our humidifier. We choose sensors, validate methods and test procedures to achieve our goals. We aim at achieving a method through humidifier to adjust the humidity to the most comfortable range of the human body without changing the temperature. After understanding the phenomena that we were interested in, we chose DHT 11 to achieve our goals, designed the circuit and wrote the code.
+
+Temperature and humidity data are collected from the DHT11 sensor. Then we use the CBE Thermal Comfort Tool to check whether the temperature and humidity are within the most comfortable range. Finally, we switch on or off the humidifier artificially. In this process, we have a deeper understanding of humidity, the temperature and humidity that the human body feels and its influencing factors, we are familiar with the whole process of using the sensor and master the use of Ada fruit.
+
+Although we spent a lot of time on this project, but due to the limitation of damage to the sensor equipment, there are still some imperfections. First, our understanding of CBE Thermal Comfort Tool is not deep enough that we are not able to directly use the Raspberry Pi code to judge the comfortable temperature and humidity range of the human body and send reminders to the mobile phone. Secondly, we only used DHT 11 to detect temperature and humidity, and no more sensors were used. Therefore, if there is a chance, we can design a more mature system to directly judge whether the humidity appears in the most suitable range for the human body. If it does not, the Raspberry Pi will directly send a reminder to the mobile phone to turn on or turn off the humidifier. So, there are some problems that we want to solve in the future.
+
+Through this group project, we have also solved different types of problems, which enhanced our understanding of humidity, DHT 11 sensors, Raspberry Pi codes and Adafruit.
+
+Thanks to Professor Mario and teaching assistants for their help. Their help and patience allowed us to successfully complete this project.
+
