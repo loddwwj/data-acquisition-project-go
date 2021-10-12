@@ -205,10 +205,112 @@ The humidifier’s sensor can only get the value in relative humidity not temper
 
 
 
-### 2. Coding Progress
+### 2.9 Coding Progress
 
 Our code is listed below:
 
+        # Import standard python modules.
+        import sys
+        import RPi.GPIO as GPIO
+        import time
+
+        # Import Adafruit IO MQTT client.
+        from Adafruit_IO import MQTTClient
+
+        import dht11
+
+        Temp_sensor=14
+        GPIO.setwarnings(False)
+        GPIO.setmode(GPIO.BCM)       # Use BCM GPIO numbers
+        # Initialise display
+        #  lcd_init()
+        instance = dht11.DHT11(pin = Temp_sensor)
+
+        ADAFRUIT_IO_USERNAME = "Onethighandthreeleghairs"
+        ADAFRUIT_IO_KEY = "aio_EnPO18As4BB1wkgScw4XScFmUWAS"
+
+
+        # Set to the ID of the feed to subscribe to for updates.
+        FEED_ID = 'DHT11'
+
+
+        # Define callback functions which will be called when certain events happen.
+        def connected(client):
+            # Connected function will be called when the client is connected to Adafruit IO.
+            # This is a good place to subscribe to feed changes.  The client parameter
+            # passed to this function is the Adafruit IO MQTT client so you can make
+            # calls against it easily.
+            print('Connected to Adafruit IO!  Listening for {0} changes...'.format(FEED_ID))
+            # Subscribe to changes on a feed named DemoFeed.
+            client.subscribe(FEED_ID)
+
+        def subscribe(client, userdata, mid, granted_qos):
+            # This method is called when the client subscribes to a new feed.
+            print('Subscribed to {0} with QoS {1}'.format(FEED_ID, granted_qos[0]))
+
+        def disconnected(client):
+            # Disconnected function will be called when the client disconnects.
+            print('Disconnected from Adafruit IO!')
+            sys.exit(1)
+
+        def message(client, feed_id, payload):
+            # Message function will be called when a subscribed feed has a new value.
+            # The feed_id parameter identifies the feed, and the payload parameter has
+            # the new value.
+            print('Feed {0} received new value: {1}'.format(feed_id, payload))
+
+
+
+
+
+        # Create an MQTT client instance.
+        client = MQTTClient(ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY)
+
+        # Setup the callback functions defined above.
+        client.on_connect    = connected
+        client.on_disconnect = disconnected
+        client.on_message    = message
+        client.on_subscribe  = subscribe
+
+        # Connect to the Adafruit IO server.
+        client.connect()
+        saved_data_h = 0
+        saved_data_t = 0
+        def main():
+          while True:
+            try:
+              client.loop()
+            except:
+              print("Failed to get data, retrying\n", e)
+              client.reconnect()
+              continue
+
+
+            result = instance.read()
+            if result.humidity == 0:
+                client.publish('humidity', saved_data_h)
+            else:
+                client.publish('humidity', result.humidity)
+                saved_data_h = result.humidity
+
+            if result.temperature == 0:
+                client.publish('temperature', saved_data_t)
+            else:
+                client.publish('temperature', result.temperature)
+                saved_data_t = result.temperature
+
+            print('humidity: ',result.humidity)
+            print('temperature: ',result.temperature)
+            time.sleep(5)
+
+
+        if __name__ == '__main__':
+            try:
+                main()
+            except KeyboardInterrupt:
+                GPIO.cleanup()
+                client.disconnect()
+                sys.exit(0)
 
 ## 3. Discussion
 
