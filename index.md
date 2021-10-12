@@ -314,6 +314,36 @@ Our code is listed below:
                 client.disconnect()
                 sys.exit(0)
 
+![](picture/code 1.png)
+
+ <center>Figure. Historic records of humidity</center>
+ 
+![](picture/code 2.png)
+
+ <center>Figure. Historic data of humidity</center>
+ 
+![](picture/code 3.png)
+
+ <center>Figure. Historic records of temperature</center>
+ 
+![](picture/code 4.png)
+
+ <center>Figure. Historic data of temperature</center>
+ 
+ We also tested dht11 and our system in different conditions. As the following figures show, the link between adafruit and sensor works well!
+ 
+![](picture/code 5.png)
+
+ <center>Figure. Gauge of high humidity in adafruit</center>
+ 
+ ![](picture/code 6.png)
+
+ <center>Figure. Gauge of high humidity and temperature in adafruit</center>
+ 
+ ![](picture/code 7.png)
+
+ <center>Figure. Gauge of normal humidity in adafruit</center>
+
 ## 3. Discussion
 
 
