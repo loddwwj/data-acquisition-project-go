@@ -199,7 +199,7 @@ The humidifier’s sensor can only get the value in relative humidity not temper
 
 ### 2.9 Coding Progress
 
-# Code and Adafruit
+#### Code and Adafruit
 
 Our python script was inspired by the in class adafruit tutorial and the dht11 tutorial from homework 2. FIrst, we imported several modules including **sys**, **RPi.GPIO**, **time**, **MQTTClient** from **Adafruit_IO**, and **dht11** from our **dht.py** script.
 
