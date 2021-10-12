@@ -16,20 +16,12 @@
 
 ### 1.1 Motivation
 
-Air humidity refers to the humidity of the air, which is used to indicate the degree of saturation of water vapor content in the air. Studies show that the optimal range of humidity is 45 to 60 percent.
-
-If the humidity is lower than 45%, indoor dryness will result in dry skin, throat, and respiratory tract, which is prone to asthma and other respiratory diseases.
-
-If the humidity is above 60 percent, the human body feels sweltering. When the air humidity is higher than 80%, the high humidity will result in high body temperature, rapid heartbeat, dizziness and nausea. At the same time, high humidity leads to the growth of more mold and fungi in the indoor space.
-
-In addition, if the air temperature is too high, but the humidity is too low, it will also affect the human digestive system. High temperature will make the human body sweat a lot, thereby losing water, saliva secretion is reduced, resulting in throat thirst; Will also accelerate the growth and reproduction of bacteria, resulting in food and water pollution; At the same time, but also easy to cause capillary dilatation, gastrointestinal discomfort, skin allergies.
+The winter in Pittsburgh is quite dry that humidifier is commonly used to keep people feel comfortable indoor. According to American Society of Heating, Refrigerating, and Air Conditioning Engineers (ASHRAE) Standard 55 - 2004 “Thermal Environmental Conditions for Human Occupancy, the thermal comfortable zone for people is related to many factors, among them, relative humidity and temperature are most concerned. However, most humidifier is unit, which means the sensor can only get relative humidity, and the sensor in humidifier is not that accurate. Based on these reasons, we want to use DHT-11 sensor to  provide a more user-friendly humidifier by increasing the accuracy and taking temperature into account.
 
 ### 1.2 Goals
 
-* Improve the resolution of a commercial humidifier by using an external sensor with higher sensitivity to meet humidity goals
-* Toggle a light or heat source to meet predefined temperature goals
-* Verify the accuracy of native sensors in the environment
-* Use other things like a basin of water to test the function of sensor
+* Improve the accuracy of humidity detected by humidifier by using an external sensor with higher sensitivity to meet humidity goals
+* Relate temperature with humidity, adjust humidity to the comfortable zone by controlling the on and off of humidifier according to ASHRAE Standard 55 – 2004.
 
 
 ## 2. Methodology
