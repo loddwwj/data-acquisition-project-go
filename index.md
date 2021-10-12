@@ -7,7 +7,8 @@
   });
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-[TOC]
+
+M-x markdown-toc-generate-toc
 
 # Temperature & Humidity Sensor at Home
   * Zhixing Wang, Jeremy Yin, Xinyao Shen, Siwen Li
