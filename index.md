@@ -56,7 +56,7 @@ PMV thermal comfort Method and ASHRAE Standard 55-2020 comfortable range;
 
 Psychrometric chart with dry-bulb temperature based on humidity ratio (temperature vs. relative humidity)
 
-Furthermore, Center for the built environmental Thermal Comfort Tool will be applied in our project.
+Furthermore, Center for the built environmental Thermal Comfort Tool will be applied in our project.[1]
 
 Humidifier in our groups will also be listed at the last.
 
@@ -383,3 +383,21 @@ Through this group project, we have also solved different types of problems, whi
 
 Thanks to Professor Mario and teaching assistants for their help. Their help and patience allowed us to successfully complete this project.
 
+
+**Reference**
+
+[1] CBE Thermal Comfort Tool. (n.d.). CBE Thermal Comfort Tool. Retrieved October 12, 2021, from https://comfort.cbe.berkeley.edu/
+
+[2] Wikipedia contributors. (2021, September 16). Humidity. Wikipedia. https://en.wikipedia.org/wiki/Humidity#Specific_humidity
+
+[3] Vapor Pressure of Water from 0 °C to 100 °C. (n.d.). Vapor Pressure of Water. Retrieved October 12, 2021, from https://www.wiredchemist.com/chemistry/data/vapor-pressure
+
+[4] Wikipedia contributors. (2021a, September 14). Thermal comfort. Wikipedia. https://en.wikipedia.org/wiki/Thermal_comfort#Thermal_comfort_models
+
+[5] Guenther, S. (2021, June 14). What Is PMV? What Is PPD? The Basics of Thermal Comfort. SimScale. https://www.simscale.com/blog/2019/09/what-is-pmv-ppd/
+
+[6] Standard 55 Thermal Environmental Conditions for Human Occupancy. (n.d.). Web Starter Kit. Retrieved October 12, 2021, from https://www.ashrae.org/technical-resources/bookstore/standard-55-thermal-environmental-conditions-for-human-occupancy
+
+[7] Temperature and Humidity. (n.d.). Temperature and Humidity. Retrieved October 12, 2021, from https://www.oshatrain.org/courses/pages/711temp.html
+
+[8] Ali, Z. (2021, August 16). Introduction to DHT11. The Engineering Projects. https://www.theengineeringprojects.com/2019/03/introduction-to-dht11.html
