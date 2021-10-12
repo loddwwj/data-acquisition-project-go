@@ -74,7 +74,7 @@ Temperature measurement accuracy: ±2℃
 
 Power supply: DC 3.5~5.5V; PCB size: 2.0 x 2.0 cm
 
-Communicates a 40-bit data transfer from the DATA channel containing:
+Communicates a 40-bit data transfer from the DATA channel containing: [11]
 
     8-bit humidity integer data
 
@@ -88,57 +88,57 @@ Communicates a 40-bit data transfer from the DATA channel containing:
 
 ![](sensor%20DHT11.png)
 
- <center>Figure1. picture of DHT11</center>
+ <center>Figure1. picture of DHT11[11]</center>
 
-DHT11 Pinout consists of 4 Pins in total, including Vcc, Data, N/C and Ground. Vcc is going to provide 3.3V to 5V at this pin. Data is going to provide a digital output. N/C is not connected. Ground is connected to 0V and GND. In order to have a direct understanding of the sensor, we show the DHT11 Pinout as the picture below:
+DHT11 Pinout consists of 4 Pins in total, including Vcc, Data, N/C and Ground. Vcc is going to provide 3.3V to 5V at this pin. Data is going to provide a digital output. N/C is not connected. Ground is connected to 0V and GND. In order to have a direct understanding of the sensor, we show the DHT11 Pinout as the picture below: [8]
 
 ![](picture/dht11 1.png)
 
- <center>Figure2. DHT11 Pinout</center>
+ <center>Figure2. DHT11 Pinout[8]</center>
 
-In order to discuss the working principle of DHT11, we must understand that there are two sensors inside it. Let’s have a look at both of them separately:
+In order to discuss the working principle of DHT11, we must understand that there are two sensors inside it. Let’s have a look at both of them separately: [8]
 
 **1) DHT11 Temperature Sensing**
 
-In order to sense the temperature in the surrounding environment, DHT11 has an NTC(Negative Temperature Coefficient) temperature sensor(also called a thermistor) mounted on the surface inside the plastic casing. NTC temperature sensors are variable resistive sensors and their resistance decreases with an increase in the surrounding temperature. Thermistors are designed with sintering of semiconductors materials, such as ceramic or polymers and they provide a large change in resistor with a small change in temperature. Here’s the graph showing the relation between temperature and resistance for the DHT11 sensor:
+In order to sense the temperature in the surrounding environment, DHT11 has an NTC(Negative Temperature Coefficient) temperature sensor(also called a thermistor) mounted on the surface inside the plastic casing. NTC temperature sensors are variable resistive sensors and their resistance decreases with an increase in the surrounding temperature. Thermistors are designed with sintering of semiconductors materials, such as ceramic or polymers and they provide a large change in resistor with a small change in temperature. Here’s the graph showing the relation between temperature and resistance for the DHT11 sensor: [8]
 
 ![](picture/dht11 2.png)
 
- <center>Figure3. DHT11 Temperature Measurement</center>
+ <center>Figure3. DHT11 Temperature Measurement[8]</center>
 
 **2) DHT11 Humidity Sensing**
 
-For Humidity Measurement, it uses a capacitive humidity sensor, which has two electrodes and a substrate material in between. The substrate material is used for holding the moisture on its surface. As moisture content changes in our environment, they are get saturated on the substrate material, which in turn changes the resistance between electrodes. This change in electrode resistivity is then calibrated using the humidity coefficient(saved in OTP memory) and the final relative humidity value is released. Here’s the image showing the internal structure of DHT11 humidity sensor:
+For Humidity Measurement, it uses a capacitive humidity sensor, which has two electrodes and a substrate material in between. The substrate material is used for holding the moisture on its surface. As moisture content changes in our environment, they are get saturated on the substrate material, which in turn changes the resistance between electrodes. This change in electrode resistivity is then calibrated using the humidity coefficient(saved in OTP memory) and the final relative humidity value is released. Here’s the image showing the internal structure of DHT11 humidity sensor: [8]
 
 ![](picture/dht11 3.png)
 
- <center>Figure4. DHT11 Humidity Measurement Part</center>
+ <center>Figure4. DHT11 Humidity Measurement Part[8]</center>
 
-Next part, we will talk about DHT11 communication with microcontroller to explain its working principles. The circuit diagram to interface DHT11 with microcontroller is shown in the below figure:
+Next part, we will talk about DHT11 communication with microcontroller to explain its working principles. The circuit diagram to interface DHT11 with microcontroller is shown in the below figure: [8]
 
 ![](picture/dht11 4.png)
 
- <center>Figure5. Circuit Diagram of DHT11</center>
+ <center>Figure5. Circuit Diagram of DHT11[8]</center>
  
  ![](picture/link 1.png)
 
- <center>Figure22. Linking DHT11 with Raspberry Pi</center>
+ <center>Figure22. Linking DHT11 with Raspberry Pi[8]</center>
 
-Pull-up resistance of 5k ohm is recommended to place at the Data Pin of DHT11 sensor. At normal conditions, the data pin of DHT11 remains at the HIGH voltage level and the sensor remains in low power consumption mode. In order to receive data from the DHT11 sensor, the microcontroller should make the Data Pin low for at least 18us, so that the sensor could sense it. Once the DHT11 sensor senses the low signal at the Data Pin, it changes its state from low power consumption mode to running mode and waits for the Data Pin to get HIGH. As the Data Pin gets HIGH again by the microcontroller, DHT11 sends out the 40-Bit calibrated output value serially. After sending the data, DHT11 goes back to low power consumption mode and waits for the next command from the microcontroller. The microcontroller has to wait for 20-40us for getting a response from the DHT11 sensor.
+Pull-up resistance of 5k ohm is recommended to place at the Data Pin of DHT11 sensor. At normal conditions, the data pin of DHT11 remains at the HIGH voltage level and the sensor remains in low power consumption mode. In order to receive data from the DHT11 sensor, the microcontroller should make the Data Pin low for at least 18us, so that the sensor could sense it. Once the DHT11 sensor senses the low signal at the Data Pin, it changes its state from low power consumption mode to running mode and waits for the Data Pin to get HIGH. As the Data Pin gets HIGH again by the microcontroller, DHT11 sends out the 40-Bit calibrated output value serially. After sending the data, DHT11 goes back to low power consumption mode and waits for the next command from the microcontroller. The microcontroller has to wait for 20-40us for getting a response from the DHT11 sensor.[8]
 
 ### 2.3 Relative humidity-Humidity ratio
 
 The definition of humidity contains several aspects: **Absolute humidity, Relative humidity, Specific humidity (humidity ratio)**. Absolute humidity can be defined as the mass of H_2 O in certain amount of volume, which will be affected by air pressure and will also be affected by temperature if the volume is not a constant.AH is absolute humidity,$AH=\frac {m_{H_{2O}}}{V_{net}}$,unit is g/$m^3$
 
-Relative humidity, Rh or ϕ is the ratio of partial pressure of water vapor in the mixture to the equilibrium vapor pressure of water over a flat surface of pure water at a given temperature.  $ϕ=\frac {p_(H_{2O})}{p*(H_{2O})}$ (Partial pressure means the percentage of water pressure divided by total pressure.) Once the ϕ increase, air should be wetter and if it reaches to 100%, it will reach to dew point(participation). Relative humidity will be affected by temperature. **The colder air will get lower capacity to maintain vapors**.
+Relative humidity, Rh or ϕ is the ratio of partial pressure of water vapor in the mixture to the equilibrium vapor pressure of water over a flat surface of pure water at a given temperature.[2]  $ϕ=\frac {p_(H_{2O})}{p*(H_{2O})}$ (Partial pressure means the percentage of water pressure divided by total pressure.) Once the ϕ increase, air should be wetter and if it reaches to 100%, it will reach to dew point(participation). Relative humidity will be affected by temperature. **The colder air will get lower capacity to maintain vapors**.
 
-Specific Humidity (humidity ratio) is the ratio of the mass of water vapor to total mass of the air parcel. Approximate formula should be $\frac {m_{H_{2O}}}{m_{air}-m_{H_{2O}}(dry air)}$ , with unit kg/kg or g/kg. In our project we need also consider the transform formula for Specific Humidity and Relative humidity. It should be 
+Specific Humidity (humidity ratio) is the ratio of the mass of water vapor to total mass of the air parcel.[2] Approximate formula should be $\frac {m_{H_{2O}}}{m_{air}-m_{H_{2O}}(dry air)}$ , with unit kg/kg or g/kg. In our project we need also consider the transform formula for Specific Humidity and Relative humidity. It should be 
 
 
 $$RH=100*\frac {ω}{ω_s} =0.263pq(exp⁡\frac {17.67(T-T_0)}{T-29.65})^{-1}$$,
 
 
-$$ω_s=\frac {m_{vs}}{m_d} =\frac {0.622e_s}{p}(approximation)$$, es means saturation vapor pressure(pa), it can be get from vapor pressure of water table.
+$$ω_s=\frac {m_{vs}}{m_d} =\frac {0.622e_s}{p}(approximation)$$, es means saturation vapor pressure(pa), it can be get from vapor pressure of water table.[3]
 
 ω means humidity ratio at certain cases,and ω_s  means saturation equilibrium humidiy ratio.
 
@@ -146,15 +146,15 @@ q means specific humidity same as ω(approximation),p certain case pressure(can 
 
 ### 2.4 Thermal Comfort Method (PMV)
 
-The Predicted Mean Vote (PMV) model stands among the most recognized thermal comfort models. It was developed using principles of heat balance and experimental data collected in a controlled climate chamber under steady state conditions. 
+The Predicted Mean Vote (PMV) model stands among the most recognized thermal comfort models. It was developed using principles of heat balance and experimental data collected in a controlled climate chamber under steady state conditions. [4]
 
-Today, thermal comfort is defined as “that condition of mind that expresses satisfaction with the thermal environment” in the globally recognized ASHRAE 55 and ISO 7730 standards for evaluating indoor environments. To assess this condition, engineers must first determine the thermal sensation or thermal balance inhabitants of an indoor environment may feel in tangent with the thermal dissatisfaction experienced by occupants. These comfort limits can be expressed by the PMV and the PPD indices.
+Today, thermal comfort is defined as “that condition of mind that expresses satisfaction with the thermal environment” in the globally recognized ASHRAE 55 and ISO 7730 standards for evaluating indoor environments. To assess this condition, engineers must first determine the thermal sensation or thermal balance inhabitants of an indoor environment may feel in tangent with the thermal dissatisfaction experienced by occupants. These comfort limits can be expressed by the PMV and the PPD indices. [5]
 
 **Our group will use PMV method to estimate the thermal comfort with ASHRAE standard and project comfortable range into Psychrometric chart.**
 
 ### 2.5 ASHARE Standard 55-2020
 
-Standard 55 specifies conditions for acceptable thermal environments and is intended for use in design, operation, and commissioning of buildings and other occupied spaces. Standard 55 specifies conditions for acceptable thermal environments and is intended for use in design, operation, and commissioning of buildings and other occupied spaces. [5]
+Standard 55 specifies conditions for acceptable thermal environments and is intended for use in design, operation, and commissioning of buildings and other occupied spaces. Standard 55 specifies conditions for acceptable thermal environments and is intended for use in design, operation, and commissioning of buildings and other occupied spaces. [6]
 
 In our project, the table here can be utilized to estimate an exact value (the range is based on website tool from Berkeley.)
 
@@ -162,11 +162,11 @@ In our project, the table here can be utilized to estimate an exact value (the r
 
 ![](picture/metho table1.png)
 
- <center>Figure6. Table of Temperature and Humidity</center>
+ <center>Figure6. Table of Temperature and Humidity[7]</center>
  
 ![](picture/metho pic2.png)
  
- <center>Figure7. ASHRAE application in computer</center>
+ <center>Figure7. ASHRAE application in computer[7]</center>
 
 **The reason we use ASHRAE Standard 55 in 2020 is that there is a good website that can manipulate inputs and outputs. (Temperature, relative humidity, humidity ratio and thermal comfortable range.)**
 
@@ -174,7 +174,7 @@ In our project, the table here can be utilized to estimate an exact value (the r
 
 ![](picture/metho pic3.png)
 
- <center>Figure8. Psychrometric Chart</center>
+ <center>Figure8. Psychrometric Chart[10]</center>
 
 As you can see, this chart comes from Thompson, and it is used in recent engineering program to estimate facts. **The X-axis means dry bulb temperature, Y-axis means humidity ratio, and relative humidity in parabola.** 
 
@@ -184,13 +184,13 @@ In next part, the thermal comfort tool is based on this chart to generate exact 
 
 ![](picture/metho pic4.png)
 
- <center>Figure9. Out of range in chart</center>
+ <center>Figure9. Out of range in chart[1]</center>
 
 ![](picture/metho pic5.png)
 
- <center>Figure10. In the range in chart</center>
+ <center>Figure10. In the range in chart[1]</center>
 
-The website tool contains inputs and outputs. **In our projects, the main two parts is temperature and relative humidity**. The other inputs, as **assumptions**, including **Air speed, metabolic rate, and clothing level, is related to ASHRAE Standard 55-2020 to get the range**. We use the formula to check with the humidity ratio that comes from relative humidity (which is closed to the chart in tool).
+The website tool contains inputs and outputs. **In our projects, the main two parts is temperature and relative humidity**. The other inputs, as **assumptions**, including **Air speed, metabolic rate, and clothing level, is related to ASHRAE Standard 55-2020 to get the range**. We use the formula to check with the humidity ratio that comes from relative humidity (which is closed to the chart in tool).[1]
 
 We get sensor value for temperature 24C and relative humidity for 46% and it’s out of thermal comfort range. In Figure 2., it shows the humidifier should work until the relative humidity reach 50%, which means it’s on thermal comfort range. 
 
@@ -200,7 +200,7 @@ In this case, the humidifier should be on working. However, according to humidif
 
 ![](picture/humidifier1.png)
 
- <center>Figure11. The structure of humidifier & relationship between chart</center>
+ <center>Figure11. The structure of humidifier & relationship between chart[9]</center>
 
 ![](picture/humidifier 2.png)
 
@@ -401,3 +401,9 @@ Thanks to Professor Mario and teaching assistants for their help. Their help and
 [7] Temperature and Humidity. (n.d.). Temperature and Humidity. Retrieved October 12, 2021, from https://www.oshatrain.org/courses/pages/711temp.html
 
 [8] Ali, Z. (2021, August 16). Introduction to DHT11. The Engineering Projects. https://www.theengineeringprojects.com/2019/03/introduction-to-dht11.html
+
+[9] Humidifier - an overview | ScienceDirect Topics. (n.d.). Humidifier. Retrieved October 12, 2021, from https://www.sciencedirect.com/topics/engineering/humidifier
+
+[10] Air - Psychrometric Chart for Standard Atmospheric Conditions - Imperial Units. (n.d.). Air - Psychrometric Chart. Retrieved October 12, 2021, from https://www.engineeringtoolbox.com/psychrometric-chart-d_816.html
+
+[11] DHT11 basic temperature-humidity sensor + extras. (n.d.). Adafruit. Retrieved October 12, 2021, from https://www.adafruit.com/product/386
