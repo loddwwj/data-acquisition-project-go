@@ -8,7 +8,25 @@
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-M-x markdown-toc-generate-toc
+- [Temperature & Humidity Sensor at Home](#temperature---humidity-sensor-at-home)
+  * [1. Introduction](#1-introduction)
+    + [1.1 Motivation](#11-motivation)
+    + [1.2 Goals](#12-goals)
+  * [2. Methodology](#2-methodology)
+    + [2.1 Phenomena of Interest](#21-phenomena-of-interest)
+    + [2.2 Sensors Used](#22-sensors-used)
+    + [2.3 Relative humidity-Humidity ratio](#23-relative-humidity-humidity-ratio)
+    + [2.4 Thermal Comfort Method (PMV)](#24-thermal-comfort-method--pmv-)
+    + [2.5 ASHARE Standard 55-2020](#25-ashare-standard-55-2020)
+    + [2.6 Psychrometric chart (temperature vs. relative humidity)](#26-psychrometric-chart--temperature-vs-relative-humidity-)
+    + [2.7 Center for the built environmental Thermal Comfort Tool](#27-center-for-the-built-environmental-thermal-comfort-tool)
+    + [2.8 Humidifier](#28-humidifier)
+    + [2.9 Coding Progress](#29-coding-progress)
+      - [Code and Adafruit](#code-and-adafruit)
+  * [3. Discussion](#3-discussion)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # Temperature & Humidity Sensor at Home
   * Zhixing Wang, Jeremy Yin, Xinyao Shen, Siwen Li
