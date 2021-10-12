@@ -8,6 +8,8 @@
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
+**Table of Contents**
+
 - [Temperature & Humidity Sensor at Home](#temperature---humidity-sensor-at-home)
   * [1. Introduction](#1-introduction)
     + [1.1 Motivation](#11-motivation)
