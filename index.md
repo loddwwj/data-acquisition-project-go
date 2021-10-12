@@ -402,7 +402,7 @@ Thanks to Professor Mario and teaching assistants for their help. Their help and
 
 [8] Ali, Z. (2021, August 16). Introduction to DHT11. The Engineering Projects. https://www.theengineeringprojects.com/2019/03/introduction-to-dht11.html
 
-[9] Humidifier - an overview | ScienceDirect Topics. (n.d.). Humidifier. Retrieved October 12, 2021, from https://www.sciencedirect.com/topics/engineering/humidifier
+[9] Humidifier - an overview - ScienceDirect Topics. (n.d.). Humidifier. Retrieved October 12, 2021, from https://www.sciencedirect.com/topics/engineering/humidifier
 
 [10] Air - Psychrometric Chart for Standard Atmospheric Conditions - Imperial Units. (n.d.). Air - Psychrometric Chart. Retrieved October 12, 2021, from https://www.engineeringtoolbox.com/psychrometric-chart-d_816.html
 
