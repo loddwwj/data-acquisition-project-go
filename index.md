@@ -207,6 +207,16 @@ The humidifier’s sensor can only get the value in relative humidity not temper
 
 ### 2.9 Coding Progress
 
+# Code and Adafruit
+
+Our python script was inspired by the in class adafruit tutorial and the dht11 tutorial from homework 2. FIrst, we imported several modules including **sys**, **RPi.GPIO**, **time**, **MQTTClient** from **Adafruit_IO**, and **dht11** from our **dht.py** script.
+
+We started out by setting up the code to locate the various elements on the breadboard in the BCM format and created an instance of the dht-11 sensor. Next, we created a new feed to listen for the humidity data and set the Adafruit username and key. After initializing our client instance with the username and key, we connected the client to the Adafruit servers. We were then able to publish the humidity values collected from our dht11 instance and also print out the current humidity values. These values are then sampled every 5 seconds. We then repeated the process for temperature.
+
+Our data from the humidity output contained a lot of zero values. In order to bypass this, the script was set to publish the last non-zero value to the server. This results in a cleaner looking graph with less sporadic changes.
+
+Our feed along with a real-time chart is displayed on the Adafruit website's feed page. Here, there is a graph plotting the real-time values along with a list of historical data values. There is a seperate feed for both humidity and temperature which is used to display two different gauges in our dht11 dashboard. We set a standard humidity and temperature range for our gauge because it does not take conditional ranges.
+
 Our code is listed below:
 
         # Import standard python modules.
