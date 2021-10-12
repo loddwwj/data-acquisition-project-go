@@ -66,13 +66,13 @@ Communicates a 40-bit data transfer from the DATA channel containing:
 
 ![](sensor%20DHT11.png)
 
- <center>Figure.picture of DHT11</center>
+ <center>Figure1. picture of DHT11</center>
 
 DHT11 Pinout consists of 4 Pins in total, including Vcc, Data, N/C and Ground. Vcc is going to provide 3.3V to 5V at this pin. Data is going to provide a digital output. N/C is not connected. Ground is connected to 0V and GND. In order to have a direct understanding of the sensor, we show the DHT11 Pinout as the picture below:
 
 ![](picture/dht11 1.png)
 
- <center>Figure. DHT11 Pinout</center>
+ <center>Figure2. DHT11 Pinout</center>
 
 In order to discuss the working principle of DHT11, we must understand that there are two sensors inside it. Let’s have a look at both of them separately:
 
@@ -82,7 +82,7 @@ In order to sense the temperature in the surrounding environment, DHT11 has an N
 
 ![](picture/dht11 2.png)
 
- <center>Figure. DHT11 Temperature Measurement</center>
+ <center>Figure3. DHT11 Temperature Measurement</center>
 
 **2) DHT11 Humidity Sensing**
 
@@ -90,13 +90,13 @@ For Humidity Measurement, it uses a capacitive humidity sensor, which has two el
 
 ![](picture/dht11 3.png)
 
- <center>Figure. DHT11 Humidity Measurement Part</center>
+ <center>Figure4. DHT11 Humidity Measurement Part</center>
 
 Next part, we will talk about DHT11 communication with microcontroller to explain its working principles. The circuit diagram to interface DHT11 with microcontroller is shown in the below figure:
 
 ![](picture/dht11 4.png)
 
- <center>Figure. Circuit Diagram of DHT11</center>
+ <center>Figure5. Circuit Diagram of DHT11</center>
 
 Pull-up resistance of 5k ohm is recommended to place at the Data Pin of DHT11 sensor. At normal conditions, the data pin of DHT11 remains at the HIGH voltage level and the sensor remains in low power consumption mode. In order to receive data from the DHT11 sensor, the microcontroller should make the Data Pin low for at least 18us, so that the sensor could sense it. Once the DHT11 sensor senses the low signal at the Data Pin, it changes its state from low power consumption mode to running mode and waits for the Data Pin to get HIGH. As the Data Pin gets HIGH again by the microcontroller, DHT11 sends out the 40-Bit calibrated output value serially. After sending the data, DHT11 goes back to low power consumption mode and waits for the next command from the microcontroller. The microcontroller has to wait for 20-40us for getting a response from the DHT11 sensor.
 
@@ -136,11 +136,11 @@ In our project, the table here can be utilized to estimate an exact value (the r
 
 ![](picture/metho table1.png)
 
- <center>Figure. Table of Temperature and Humidity</center>
+ <center>Figure6. Table of Temperature and Humidity</center>
  
 ![](picture/metho pic2.png)
  
- <center>Figure. ASHRAE application in computer</center>
+ <center>Figure7. ASHRAE application in computer</center>
 
 **The reason we use ASHRAE Standard 55 in 2020 is that there is a good website that can manipulate inputs and outputs. (Temperature, relative humidity, humidity ratio and thermal comfortable range.)**
 
@@ -148,7 +148,7 @@ In our project, the table here can be utilized to estimate an exact value (the r
 
 ![](picture/metho pic3.png)
 
- <center>Figure. Psychrometric Chart</center>
+ <center>Figure8. Psychrometric Chart</center>
 
 As you can see, this chart comes from Thompson, and it is used in recent engineering program to estimate facts. **The X-axis means dry bulb temperature, Y-axis means humidity ratio, and relative humidity in parabola.** 
 
@@ -158,11 +158,11 @@ In next part, the thermal comfort tool is based on this chart to generate exact 
 
 ![](picture/metho pic4.png)
 
- <center>Figure. Out of range in chart</center>
+ <center>Figure9. Out of range in chart</center>
 
 ![](picture/metho pic5.png)
 
- <center>Figure. In the range in chart</center>
+ <center>Figure10. In the range in chart</center>
 
 The website tool contains inputs and outputs. **In our projects, the main two parts is temperature and relative humidity**. The other inputs, as **assumptions**, including **Air speed, metabolic rate, and clothing level, is related to ASHRAE Standard 55-2020 to get the range**. We use the formula to check with the humidity ratio that comes from relative humidity (which is closed to the chart in tool).
 
@@ -174,19 +174,19 @@ In this case, the humidifier should be on working. However, according to humidif
 
 ![](picture/humidifier1.png)
 
- <center>Figure. The structure of humidifier & relationship between chart</center>
+ <center>Figure11. The structure of humidifier & relationship between chart</center>
 
 ![](picture/humidifier 2.png)
 
- <center>Figure. Total view of humidifier</center>
+ <center>Figure12. Total view of humidifier</center>
 
 ![](picture/humidifier 3.png)
 
- <center>Figure. Not vaporizing humidifier</center>
+ <center>Figure13. Not vaporizing humidifier</center>
 
 ![](picture/humidifier 4.png)
 
- <center>Figure. Vaporizing humidifier</center>
+ <center>Figure14. Vaporizing humidifier</center>
 
 *summary of humidifier*
 The humidifier limits are based on several aspects:
@@ -316,33 +316,33 @@ Our code is listed below:
 
 ![](picture/code 1.png)
 
- <center>Figure. Historic records of humidity</center>
+ <center>Figure15. Historic records of humidity</center>
  
 ![](picture/code 2.png)
 
- <center>Figure. Historic data of humidity</center>
+ <center>Figure16. Historic data of humidity</center>
  
 ![](picture/code 3.png)
 
- <center>Figure. Historic records of temperature</center>
+ <center>Figure17. Historic records of temperature</center>
  
 ![](picture/code 4.png)
 
- <center>Figure. Historic data of temperature</center>
+ <center>Figure18. Historic data of temperature</center>
  
  We also tested dht11 and our system in different conditions. As the following figures show, the link between adafruit and sensor works well!
  
 ![](picture/code 5.png)
 
- <center>Figure. Gauge of high humidity in adafruit</center>
+ <center>Figure19. Gauge of high humidity in adafruit</center>
  
  ![](picture/code 6.png)
 
- <center>Figure. Gauge of high humidity and temperature in adafruit</center>
+ <center>Figure20. Gauge of high humidity and temperature in adafruit</center>
  
  ![](picture/code 7.png)
 
- <center>Figure. Gauge of normal humidity in adafruit</center>
+ <center>Figure21. Gauge of normal humidity in adafruit</center>
 
 ## 3. Discussion
 
