@@ -122,7 +122,7 @@ Next part, we will talk about DHT11 communication with microcontroller to explai
  
  ![](picture/link 1.png)
 
- <center>Figure22. Linking DHT11 with Raspberry Pi[8]</center>
+ <center>Figure22. Linking DHT11 with Raspberry Pi</center>
 
 Pull-up resistance of 5k ohm is recommended to place at the Data Pin of DHT11 sensor. At normal conditions, the data pin of DHT11 remains at the HIGH voltage level and the sensor remains in low power consumption mode. In order to receive data from the DHT11 sensor, the microcontroller should make the Data Pin low for at least 18us, so that the sensor could sense it. Once the DHT11 sensor senses the low signal at the Data Pin, it changes its state from low power consumption mode to running mode and waits for the Data Pin to get HIGH. As the Data Pin gets HIGH again by the microcontroller, DHT11 sends out the 40-Bit calibrated output value serially. After sending the data, DHT11 goes back to low power consumption mode and waits for the next command from the microcontroller. The microcontroller has to wait for 20-40us for getting a response from the DHT11 sensor.[8]
 
