@@ -33,7 +33,7 @@
 
 # Temperature & Humidity Sensor at Home
   * Siwen Li, Xinyao Shen, Zhixing Wang, Jeremy Yin
-  * video link:
+  * video link: https://www.bilibili.com/video/BV1Vv41137Pa/
 
 ## 1. Introduction
 
