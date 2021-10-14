@@ -40,12 +40,11 @@
 
 ### 1.1 Motivation
 
-The winters in Pittsburgh are quite dry and humidifiers are commonly used to keep people comfortable indoors. According to the American Society of Heating, Refrigerating, and Air Conditioning Engineers (ASHRAE) Standard 55 - 2004 “Thermal Environmental Conditions for Human Occupancy, the thermal comfort zone for people is related to many factors. Among these factors, relative humidity and temperature are of the utmost concern. Most humidifiers are unable to determine humidity as a function of temperature and are also not inaccurate. Based on these reasons, we want to use the DHT-11 sensor to provide a more user-friendly humidifier by increasing the accuracy and taking temperature into account.
+The winters in Pittsburgh are quite dry and humidifiers are commonly used to keep people comfortable indoors. According to the American Society of Heating, Refrigerating, and Air Conditioning Engineers (ASHRAE) Standard 55 - 2004 “Thermal Environmental Conditions for Human Occupancy, the thermal comfort zone for people is related to many factors. Among these factors, relative humidity and temperature are of the utmost concern. Most humidifiers are unable to determine humidity as a function of temperature. Based on these reasons, we want to use the DHT-11 sensor to provide a more user-friendly humidifier by taking temperature into account.
 
 ### 1.2 Goals
 
-* Improve the accuracy of humidity detected by humidifier by using an external sensor with higher sensitivity to meet humidity goals
-* Relate the humidity as a function of temperature and adjust the humidity to the comfortable zone by controlling the on and off of humidifier according to ASHRAE Standard 55 – 2004.
+* In order to enhance humidifier capability, our project will relate the humidity as a function of temperature and adjust the humidity to the comfortable zone by controlling the on and off of humidifier according to ASHRAE Standard 55 – 2004.
 
 
 ## 2. Methodology
@@ -61,6 +60,8 @@ Psychrometric chart with dry-bulb temperature based on humidity ratio (temperatu
 Furthermore, Center for the Built Environment Thermal Comfort Tool will be applied in our project.[1]
 
 The model of the humidifier used in this project is listed in section 2.8.
+
+Get the real time humidity and temperature from adafruit.
 
 
 ### 2.2 Sensors Used
@@ -130,6 +131,8 @@ A resistance of 5k ohm for the pull-up resistor should be on the Data pin of the
 
 ### 2.3 Relative Humidity-Humidity Ratio
 
+**Relative humidity** is a way of describing how much humidity is present in the air, compared to how much there could be. On summer nights, dew begins to appear on grass leaves, which indicates that the air is "saturated" with water vapor and can no longer dissolve it.But if the temperature rises and the dew disappears again, that means the water evaporates and dissolves into the air, which is once again "unsaturated". **So the absolute water content in the air is constant, but the relative humidity is different.**
+
 Humidity contains several aspects including **Absolute humidity, Relative humidity, Specific humidity (humidity ratio)**. Absolute humidity can be defined as the mass of H_2 O in a certain amount of volume, which will be affected by both air pressure and temperature if the volume is not held constant. AH is the absolute humidity, $AH=\frac {m_{H_{2O}}}{V_{net}}$,unit is g/$m^3$
 
 Relative humidity, Rh or ϕ is the ratio of partial pressure of water vapor in the mixture to the equilibrium vapor pressure of water over a flat surface of pure water at a given temperature. [2] $ϕ=\frac {p_(H_{2O})}{p*(H_{2O})}$ (Partial pressure means the percentage of water pressure divided by total pressure.) Once the ϕ increase, air should become wetter. If the ϕ reaches 100%, it will reach the dew point (precipitation). Relative humidity will be affected by temperature. **The colder air will get a lower capacity to maintain vapors**.
@@ -148,9 +151,9 @@ q means specific humidity same as ω(approximation),p certain case pressure(can 
 
 ### 2.4 Thermal Comfort Method (PMV)
 
-The Predicted Mean Vote (PMV) model stands among the most recognized thermal comfort models. It was developed using principles of heat balance and experimental data collected in a controlled climate chamber under steady-state conditions. [4]
+**The Predicted Mean Vote (PMV) model stands among the most recognized thermal comfort models.**  [4]
 
-Today, thermal comfort is defined as “that condition of mind that expresses satisfaction with the thermal environment” in the globally recognized ASHRAE 55 and ISO 7730 standards for evaluating indoor environments. To assess this condition, engineers must first determine the thermal sensation or thermal balance inhabitants of an indoor environment may feel in tangent with the thermal dissatisfaction experienced by occupants. These comfort limits can be expressed by the PMV and the PPD indices. [5]
+Today, thermal comfort is defined as “that condition of mind that expresses satisfaction with the thermal environment” in the globally recognized ASHRAE 55 and ISO 7730 standards for evaluating indoor environments.  [5]
 
 **Our group will use PMV method to estimate the thermal comfort with ASHRAE standard and project comfortable range into Psychrometric chart.**
 
@@ -160,17 +163,14 @@ The American Society of Heating, Refrigerating, and Air Conditioning Engineers (
 
 The table here can be used to estimate an exact value. We use a specific range specified on a web tool from Berkeley.
 
-**Table 1 presents the values from the Canadian Standards Association (CSA) International's Standard** CAN/CSA Z412-00 - "Office Ergonomics" which gives temperature and relative humidity requirements for offices in Canada. These values are based on the ASHRAE Standard 55 - 2004 "Thermal Environmental Conditions for Human Occupancy". The values below are designed to meet the needs of 80% of occupants which means 20% of the occupants will still feel some form of discomfort even if these values are met. Additional measures may be required to ensure comfort for everyone. ASHRAE Standard 55 recommends a range of temperature and humidity values for thermal comfort in office work. 
+**Table 1 presents the values from the Canadian Standards Association (CSA) International's Standard** CAN/CSA Z412-00 - "Office Ergonomics" which gives temperature and relative humidity requirements for offices in Canada. These values are based on the ASHRAE Standard 55 - 2004 "Thermal Environmental Conditions for Human Occupancy". (The values below are designed to meet the needs of 80% of occupants which means 20% of the occupants will still feel some form of discomfort even if these values are met. Additional measures may be required to ensure comfort for everyone. ASHRAE Standard 55 recommends a range of temperature and humidity values for thermal comfort in office work.) 
 
 
 ![](picture/metho table1.png)
 
  <center>Figure 6. Table of Temperature and Humidity[7]</center>
  
-![](picture/metho pic2.png)
  
- <center>Figure 7. ASHRAE Application in Computer[7]</center>
-
 **The reason we use ASHRAE Standard 55 in 2020 is that there is a good web tool that can manipulate inputs and outputs. (Temperature, relative humidity, humidity ratio and thermal comfortable range.)**
 
 ### 2.6 Psychrometric Chart (Temperature vs. Relative Humidity)
@@ -219,11 +219,11 @@ In this case, our humidifier should be on working. However, due to our humidifie
  <center>Figure14. Vaporizing Humidifier</center>
 
 *summary of humidifier*
-The humidifier limits are based on several aspects:
-1.	**Inaccuracy** 
-The humidity is inaccurate because its sensor is on the circuit. In this case, it might be inaccurate. However, DHT11 in Raspberry Pi is directly connected to air which is accurate.
-2.	**Inability to Incorporate Temperature**
-The humidifier’s sensor can only get the humidity value without incorporating temperature. It can not get the correct thermal comfort range to release vapor efficiently. 
+The humidifier limits are based on:
+
+**Inability to Incorporate Temperature**
+
+The humidifier’s sensor can only get the humidity value without incorporating temperature. It can not get the correct thermal comfort range to release vapor efficiently. Since humidifier doesn't have codes about comfort zone, its sensor can't sense and analyse the proper information well.
 
 
 
