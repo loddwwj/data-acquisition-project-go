@@ -131,13 +131,13 @@ A resistance of 5k ohm for the pull-up resistor should be on the Data pin of the
 
 ### 2.3 Relative Humidity-Humidity Ratio
 
-**Relative humidity** is a way of describing how much humidity is present in the air, compared to how much there could be. On summer nights, dew begins to appear on grass leaves, which indicates that the air is "saturated" with water vapor and can no longer dissolve it.But if the temperature rises and the dew disappears again, that means the water evaporates and dissolves into the air, which is once again "unsaturated". **So the absolute water content in the air is constant, but the relative humidity is different.**
+**Relative humidity** is a way of describing how much water vapor is present in the air, compared to the amount needed for saturation at that temperature. On summer nights, dew begins to appear on grass leaves, which indicates that the air is saturated with water vapor and can no longer dissolve it. But if the temperature rises and the dew disappears, that means the water vapor evaporates and dissolves into the air, which is once again not fully saturated. **So the absolute water content in the air is constant, but the relative humidity is different.**
 
-Humidity contains several aspects including **Absolute humidity, Relative humidity, Specific humidity (humidity ratio)**. Absolute humidity can be defined as the mass of H_2 O in a certain amount of volume, which will be affected by both air pressure and temperature if the volume is not held constant. AH is the absolute humidity, $AH=\frac {m_{H_{2O}}}{V_{net}}$,unit is g/$m^3$
+Humidity contains several aspects including **Absolute humidity, Relative humidity, Specific humidity (humidity ratio)**. Absolute humidity can be defined as the mass of H_2 O in a certain amount of volume, which will be affected by both air pressure and temperature if the volume is not held constant. AH is the absolute humidity, $AH=\frac {m_{H_{2O}}}{V_{net}}$,unit is g/$m^3$
 
-Relative humidity, Rh or ϕ is the ratio of partial pressure of water vapor in the mixture to the equilibrium vapor pressure of water over a flat surface of pure water at a given temperature. [2] $ϕ=\frac {p_(H_{2O})}{p*(H_{2O})}$ (Partial pressure means the percentage of water pressure divided by total pressure.) Once the ϕ increase, air should become wetter. If the ϕ reaches 100%, it will reach the dew point (precipitation). Relative humidity will be affected by temperature. **The colder air will get a lower capacity to maintain vapors**.
+Relative humidity, Rh or ϕ is the ratio of partial pressure of water vapor in the mixture to the equilibrium vapor pressure of water over a flat surface of pure water at a given temperature. [2] $ϕ=\frac {p_(H_{2O})}{p*(H_{2O})}$ (Partial pressure means the percentage of water pressure divided by total pressure.) Once the ϕ increase, air should become wetter. If the ϕ reaches 100%, it will reach the dew point (precipitation). Relative humidity will be affected by temperature. **The colder air will get a lower capacity to maintain vapors**.
 
-Specific humidity, the humidity ratio, is the ratio of the mass of water vapor to the total mass of the air parcel.[2] Approximate formula should be $\frac {m_{H_{2O}}}{m_{air}-m_{H_{2O}}(dry air)}$ , with unit kg/kg or g/kg. In our project, we also need to consider the transform formula for Specific Humidity and Relative humidity. It should be 
+Specific humidity, the humidity ratio, is the ratio of the mass of water vapor to the total mass of the air parcel.[2] Approximate formula should be $\frac {m_{H_{2O}}}{m_{air}-m_{H_{2O}}(dry air)}$ , with unit kg/kg or g/kg. In our project, we also need to consider the transform formula for Specific Humidity and Relative humidity. It should be 
 
 
 $RH=100*\frac {ω}{ω_s} =0.263pq(exp⁡\frac {17.67(T-T_0)}{T-29.65})^{-1}$,
@@ -163,7 +163,7 @@ The American Society of Heating, Refrigerating, and Air Conditioning Engineers (
 
 The table here can be used to estimate an exact value. We use a specific range specified on a web tool from Berkeley.
 
-**Table 1 presents the values from the Canadian Standards Association (CSA) International's Standard** CAN/CSA Z412-00 - "Office Ergonomics" which gives temperature and relative humidity requirements for offices in Canada. These values are based on the ASHRAE Standard 55 - 2004 "Thermal Environmental Conditions for Human Occupancy". (The values below are designed to meet the needs of 80% of occupants which means 20% of the occupants will still feel some form of discomfort even if these values are met. Additional measures may be required to ensure comfort for everyone. ASHRAE Standard 55 recommends a range of temperature and humidity values for thermal comfort in office work.) 
+**Table 1 presents the values from the Canadian Standards Association (CSA) International's Standard** CAN/CSA Z412-00 - "Office Ergonomics" which gives temperature and relative humidity requirements for offices in Canada. These values are based on the ASHRAE Standard 55 - 2004 "Thermal Environmental Conditions for Human Occupancy". (The values below are designed to meet the needs of 80% of occupants which means 20% of the occupants will still feel some form of discomfort even if these values are met. Additional measures may be required to ensure comfort for everyone. ASHRAE Standard 55 recommends a range of temperature and humidity values for thermal comfort in office work.) 
 
 
 ![](picture/metho table1.png)
@@ -193,11 +193,11 @@ In next part, the thermal comfort tool, which is based on this chart, is used to
 
  <center>Figure 10. In the Range in Chart[1]</center>
 
-The website tool contains inputs and outputs. **In our projects, the main two parts are temperature and relative humidity**. The other inputs are set as **assumptions**, including **Airspeed, metabolic rate, and clothing level, which are related to ASHRAE Standard 55-2020 to get the range**. We use the formula to check the humidity ratio that comes from relative humidity (which is close to the chart in the tool).[1]
+The website tool contains inputs and outputs. **In our projects, the main two parts are temperature and relative humidity**. The other inputs are set as **assumptions**, including **Airspeed, metabolic rate, and clothing level, which are related to ASHRAE Standard 55-2020 to get the range**. We use the formula to check the humidity ratio that comes from relative humidity (which is close to the chart in the tool).[1]
 
-We use this tool by getting sensor value for the temperature at 24C and the relative humidity at 46%. These values are out of the thermal comfort range. Figure 2. shows the humidifier should work until the relative humidity reaches 50%, which means it’s in the thermal comfort range. 
+We use this tool by getting sensor value for the temperature at 24C and the relative humidity at 46%. These values are out of the thermal comfort range. Figure 2. shows the humidifier should work until the relative humidity reaches 50%, which means it’s in the thermal comfort range. 
 
-In this case, our humidifier should be on working. However, due to our humidifier’s shortcomings in both the sensor's accuracy and the sensor's inability to incorporate temperature, our humidifier didn’t release the vapor. 
+In this case, our humidifier should be on working. However, due to our humidifier’s shortcomings in both the sensor's accuracy and the sensor's inability to incorporate temperature, our humidifier didn’t release the vapor. 
 
 
 ### 2.8 Humidifier
